@@ -1,0 +1,467 @@
+
+
+img {
+    max-width: 100%;
+}
+
+@font-face {
+    font-family: Old Standart TT;
+    src: url('../fonts/19413.ttf') format('truetype');
+}
+
+h1 span,
+h3 span {
+    color: #e25568;
+}
+
+h1,
+h3 {
+    text-align: center;
+    font-family: Old Standart TT;
+    font-weight: 200;
+}
+
+h4 {
+    font-family: Old Standart TT;
+    font-weight: 200;
+    background: rgb(246, 37, 77);
+    background: linear-gradient(0deg, #860014 0%, #f6254b 100%);
+    height: 40px;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+    margin: 0;
+}
+
+body {
+    background: #ECEBE7;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav {
+    background: rgb(246, 37, 77);
+    background: linear-gradient(0deg, rgba(246, 37, 77, 1) 0%, rgba(134, 0, 19, 1) 100%);
+    text-align: center;
+    padding: 20px 0 60px 0;
+}
+
+nav select {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav .top-menu {
+    display: none;
+}
+
+.container {
+    padding: 0 15px;
+    flex-grow: 1
+}
+
+.container section {
+    background: #fff;
+    border: 1px #aaa solid;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+.container section:nth-child(2){
+    margin-top: 30px;
+}
+
+footer {
+    background: rgb(246, 37, 77);
+    background: linear-gradient(0deg, #860014 0%, #f6254b 100%);
+    padding: 15px 0;
+    color: #fff;
+}
+.wrapper {width: 98%;
+    height:419px;
+	margin-top: -40px;
+	position: relative;
+    
+	}
+.wrapper img{
+    width: 100%;
+}
+
+.slider {
+	/*background-color: #fff;*/
+	height: inherit;
+	overflow: hidden;
+	position: relative;
+	width: inherit;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    left: 15px;
+}
+.slider2{
+    padding: 15px;
+    position:absolute;
+    top: 50%;
+    left: 3%;
+    z-index: 5;
+background: rgba(219, 219, 219, 0.5);
+border: rgba(219, 219, 219, 0.979) 1px solid;
+border-radius: 10px;
+}
+.slider2 p:nth-child(1){
+    font-family: Old Standart TT;
+    font-size: 30px;
+    margin: 0 0 10px 0;
+}
+.slider2 p:nth-child(2){
+    margin: 0 0 0 0;
+}
+.slider2 p:nth-child(3){
+    margin: 0 0 0 0;
+}
+.slider2 p:nth-child(4){
+    display: block;
+    text-align: end;
+   margin-left: 70%;
+    background:#e24b5f ;
+   width: 80px;
+   padding: 10px;
+   border:#e24b5f 1px solid ;
+   border-radius: 7px;
+}
+.slider2 a{
+    text-decoration: none;
+    color: #fff;
+    font-family: Old Standart TT;
+}
+.wrapper > input {
+	display: none;
+}
+.slides {
+	height: inherit;
+	position: absolute;
+	width: inherit;
+}
+
+.slide1 { background-image: url(../images/slide1.jpg); }
+.slide2 { background-image: url(../images/slide2.jpg); }
+.slide3 { background-image: url(../images/slide3.jpg); }
+
+.wrapper .controls {
+	left: 50%;
+	margin-left: -98px;
+	position: absolute;
+    
+}
+
+.wrapper label {
+	cursor: pointer;
+	display: inline-block;
+	height: 8px;
+	margin: 25px 12px 0 16px;
+	position: relative;
+	width: 8px;
+	
+	border-radius: 50%;
+}
+
+.wrapper label:after {
+	border: 2px solid #e24b5f;
+	content: " ";
+	display: block;
+	height: 12px;
+	left: -4px;
+	position: absolute;
+	top: -4px;
+	width: 12px;
+	border-radius: 50%;
+}
+.wrapper label {
+	cursor: pointer;
+	display: inline-block;
+	height: 8px;
+	margin: 25px 12px 0 16px;
+	position: relative;
+	width: 8px;
+	border-radius: 50%;
+	transition: background ease-in-out .5s;
+}
+
+.wrapper label:hover, 
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3)
+{
+	background: #e24b5f;
+}
+.slides {
+	height: inherit;
+	/*opacity: 0;*/
+	position: absolute;
+   /* left:40px;*/
+	width:100%;
+	z-index: 0;
+	/*transform: scale(1.5);*/
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    background-size:100% auto;
+}
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3
+ {
+	opacity: 1;
+	z-index: 1;
+	transform: scale(1);
+}
+
+
+
+.slider:before,
+.slider:after {
+    content: '';
+    width: 50%;
+    height: 10px;
+    display: block;
+    box-shadow: 0 20px 10px #000;
+    position: absolute;
+    bottom: 20px;
+    z-index: -1;
+}
+
+.slider:before {
+    left: 5px;
+    transform: rotate(-3deg);
+}
+
+.slider:after {
+    right: 5px;
+    transform: rotate(3deg);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-25 {
+    text-align: center;
+    width: 25%
+}
+
+.col-75 {
+    width: 75%
+}
+
+.section2 {
+    border: #e5e5e5 1px solid;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.section2 div {
+    margin: 5px;
+    padding: 5px;
+    border: #e5e5e5 1px solid;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.section22 img {
+    width: 100%
+}
+
+.review {
+    background: #ddd;
+    border-radius: 10px;
+    padding: 2px;
+    margin: 11px 0 11px 0px;
+    position: relative;
+}
+
+footer .container p a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.casper {
+    visibility: hidden;
+}
+
+.col-lg-75 .row:nth-child(1) .col-75 .review::after {
+    /*задали уголок*/
+    content: '';
+    display: block;
+    border: 8px solid;
+    border-color: transparent transparent transparent #ddd;
+    width: 0;
+    position: absolute;
+    bottom: 80%;
+    left: 100%;
+    z-index: 5;
+    right: 1px;
+}
+
+.col-lg-75 .row:nth-child(2) .col-75 .review::before {
+    content: '';
+    display: block;
+    border: 8px solid;
+    border-color: transparent #ddd transparent transparent;
+    width: 0;
+    position: absolute;
+    bottom: 80%;
+    left: -16px;
+    z-index: 5;
+    right: 1px;
+}
+
+.review span {
+    font-weight: bold;
+}
+
+footer a span {
+    border-bottom: #fff 2px dotted;
+}
+
+.col-lg-25 {
+    background: #ddd;
+    text-align: center;
+    height: 100%;
+}
+
+.col-lg-25 p {
+    color: #000;
+    margin: 0 0 0 0;
+}
+
+#picture1 {
+    display: block;
+    margin:11px 0 0 10px;
+    border: #DDD 1PX SOLID;
+    border-radius: 8px;
+   padding: 0;
+    }
+    #picture2{
+        display: block;
+        border: #DDD 1PX SOLID;
+        border-radius: 8px;
+        margin:11px 10px 0 0;
+    }
+video {
+    width: 50%;
+    height: 70%;
+    border: #fff 6px solid;
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 992px) {
+    nav select {
+        display: none;
+    }
+    nav .top-menu {
+        display: block;
+    }
+    nav .top-menu a {
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        padding: 5px 20px;
+    }
+    nav .top-menu .active,
+    nav .top-menu a:hover {
+        background: #fff;
+        border-radius: 3px;
+        color: #000
+    }
+    .container {
+        width: 80%;
+        max-width: 1400px;
+        margin: auto;
+    }
+    
+    .slider:before,
+    .slider:after {
+        bottom: 30px
+    }
+    .col-lg-75 {
+        width: 75%;
+        height: 100%;
+    }
+    .col-lg-25 {
+        width: 25%;
+    }
+    .col-lg-25 img {
+        height: 50%;
+    }
+    .row-reverse {
+        flex-direction: row-reverse;
+    }
+    .section22 {
+        display: flex;
+        flex-direction: row;
+    }
+    .section22 img {
+        width: 100%
+    }
+    .col-lg-75 .row:nth-child(1) .col-75 .review::after {
+        /*задали уголок*/
+        content: '';
+        display: block;
+        border: 8px solid;
+        border-color: transparent transparent transparent #ddd;
+        width: 0;
+        position: absolute;
+        bottom: 70%;
+        left: 100%;
+        z-index: 5;
+        right: 1px;
+    }
+    .col-lg-75 .row:nth-child(2) .col-75 .review::before {
+        content: '';
+        display: block;
+        border: 8px solid;
+        border-color: transparent #ddd transparent transparent;
+        width: 0;
+        position: absolute;
+        bottom: 70%;
+        left: -16px;
+        z-index: 5;
+        right: 1px;
+    }
+    .col-lg-75 .row:nth-child(1) .col-75 .review {
+        margin-left: 10px;
+    }
+    #picture1 {
+        display: block;
+        margin:11px 0 0 10px;
+        border: #DDD 1PX SOLID;
+        border-radius: 8px;
+       padding: 0;
+        }
+   #picture2{
+        display: block;
+        border:#DDD 1PX SOLID;
+        border-radius:8px;
+        margin: 11px 0 0 115px;
+    }
+    footer .container{
+        position: relative;
+        height: 80px;
+    }
+    footer p{
+        display: inline;
+        border-right: #FFF 1px solid;
+        margin-right: 2px;
+        padding-right: 3px;
+    }
+    footer p:nth-child(6),footer p:nth-child(9){
+        border:none;
+    }
+    p:nth-child(8){
+        border:none;
+        position: absolute;
+        right: 85%;
+        top: 10px;
+    }
+}
